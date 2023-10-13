@@ -1,10 +1,27 @@
-[gd_scene load_steps=17 format=3 uid="uid://iieqmssiuvbq"]
+[gd_scene load_steps=20 format=3 uid="uid://iieqmssiuvbq"]
 
 [ext_resource type="Texture2D" uid="uid://bn8wfhbs1omgo" path="res://third_person_controller_assets-main/textures/grids/Dark/texture_08.png" id="1_n7xde"]
 [ext_resource type="Texture2D" uid="uid://b58xv1joypxo5" path="res://third_person_controller_assets-main/textures/grids/Orange/texture_09.png" id="2_smcf8"]
 [ext_resource type="Texture2D" uid="uid://c60h7aap3pgnt" path="res://third_person_controller_assets-main/textures/grids/Light/texture_08.png" id="3_2i4bk"]
 [ext_resource type="Texture2D" uid="uid://djg8y25y06h5n" path="res://third_person_controller_assets-main/textures/grids/Green/texture_09.png" id="4_o5yos"]
 [ext_resource type="Texture2D" uid="uid://cm5m7nr7dugjd" path="res://third_person_controller_assets-main/textures/grids/Purple/texture_09.png" id="5_7x2vb"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fpyft"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_t1vlb"]
+sky_material = SubResource("ProceduralSkyMaterial_fpyft")
+
+[sub_resource type="Environment" id="Environment_4u53q"]
+background_mode = 2
+sky = SubResource("Sky_t1vlb")
+tonemap_mode = 2
+sdfgi_enabled = true
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(1, 1, 1, 1)
+fog_density = 0.001
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n1jqn"]
 albedo_texture = ExtResource("1_n7xde")
@@ -49,6 +66,13 @@ albedo_texture = ExtResource("5_7x2vb")
 uv1_triplanar = true
 
 [node name="world" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_4u53q")
 
 [node name="map" type="Node3D" parent="."]
 
