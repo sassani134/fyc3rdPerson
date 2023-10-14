@@ -8,8 +8,9 @@ const JUMP_VELOCITY = 4.5
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-var sens_horizontal = 0.5
-var sens_vertical = 0.5
+@export var sens_horizontal = 0.5
+@export var sens_vertical = 0.5
+
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED # mouse movment
 

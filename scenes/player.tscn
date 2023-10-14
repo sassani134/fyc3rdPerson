@@ -8,6 +8,8 @@ radius = 0.3
 
 [node name="player" type="CharacterBody3D"]
 script = ExtResource("1_xunpx")
+sens_horizontal = 0.1
+sens_vertical = 0.1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
