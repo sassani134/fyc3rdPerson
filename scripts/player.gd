@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 @onready var camera_mount = $camera_mount
 @onready var animation_player = $visuals/mixamo_base/AnimationPlayer
+@onready var visuals = $visuals
 
 const SPEED = 3.0
 const JUMP_VELOCITY = 4.5
@@ -36,6 +37,10 @@ func _physics_process(delta):
 	if direction:
 		if animation_player.current_animation != "walking":
 			animation_player.play("walking")
+			
+			
+		visuals.look_at(position + direction)
+		
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 	else:
