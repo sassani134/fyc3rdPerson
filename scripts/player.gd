@@ -10,6 +10,8 @@ const JUMP_VELOCITY = 4.5
 var walking_speed = 3.0
 var running_speed = 6.0
 
+var running = false
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -28,8 +30,10 @@ func _input(event):
 func _physics_process(delta):
 	if Input.is_action_pressed("run"):
 		SPEED = running_speed
+		running = true
 	else :
 		SPEED = walking_speed
+		running = false
 		
 	# Add the gravity.
 	if not is_on_floor():
@@ -44,9 +48,13 @@ func _physics_process(delta):
 	var input_dir = Input.get_vector("left", "right", "forward", "backward")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		if animation_player.current_animation != "walking":
-			animation_player.play("walking")
-			
+		if running:
+			if animation_player.current_animation != "running":
+				animation_player.play("running")
+		else :
+			if animation_player.current_animation != "walking":
+				animation_player.play("walking")
+
 			
 		visuals.look_at(position + direction)
 		
