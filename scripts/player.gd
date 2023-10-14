@@ -34,9 +34,13 @@ func _physics_process(delta):
 	var input_dir = Input.get_vector("left", "right", "forward", "backward")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
+		if animation_player.current_animation != "walking":
+			animation_player.play("walking")
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 	else:
+		if animation_player.current_animation != "idle":
+			animation_player.play("idle")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
