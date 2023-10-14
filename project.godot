@@ -14,3 +14,7 @@ config/name="fyc3rdPerson"
 run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://esgiLogo.svg"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/wakatime/plugin.cfg")

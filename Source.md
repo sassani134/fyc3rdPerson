@@ -12,3 +12,4 @@ https://www.reddit.com/r/godot/
 https://stackoverflow.com/questions/tagged/godot
 https://stackoverflow.com/questions/tagged/godot4
 https://stackoverflow.com/questions/tagged/gdscript
+https://github.com/thomazthz/godot-wakatime/tree/v1.5.0
