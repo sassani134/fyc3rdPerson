@@ -4,8 +4,11 @@ extends CharacterBody3D
 @onready var animation_player = $visuals/mixamo_base/AnimationPlayer
 @onready var visuals = $visuals
 
-const SPEED = 3.0
+var SPEED = 3.0
 const JUMP_VELOCITY = 4.5
+
+var walking_speed = 3.0
+var running_speed = 6.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -23,6 +26,11 @@ func _input(event):
 		camera_mount.rotate_x(deg_to_rad(- event.relative.y *  sens_vertical))
 
 func _physics_process(delta):
+	if Input.is_action_pressed("run"):
+		SPEED = running_speed
+	else :
+		SPEED = walking_speed
+		
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
