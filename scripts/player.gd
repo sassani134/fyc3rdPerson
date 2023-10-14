@@ -31,6 +31,9 @@ func _input(event):
 
 func _physics_process(delta):
 	
+	if !animation_player.is_playing():
+		is_locked=false
+	
 	if Input.is_action_just_pressed("kick"):
 		if animation_player.current_animation != "kick":
 			animation_player.play("kick")
@@ -56,22 +59,21 @@ func _physics_process(delta):
 	var input_dir = Input.get_vector("left", "right", "forward", "backward")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		if running:
-			if animation_player.current_animation != "running":
-				animation_player.play("running")
-		else :
-			if animation_player.current_animation != "walking":
-				animation_player.play("walking")
-				
-				
 		if !is_locked:
+			if running:
+				if animation_player.current_animation != "running":
+					animation_player.play("running")
+			else :
+				if animation_player.current_animation != "walking":
+					animation_player.play("walking")
 			visuals.look_at(position + direction)
 		
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 	else:
-		if animation_player.current_animation != "idle":
-			animation_player.play("idle")
+		if !is_locked:
+			if animation_player.current_animation != "idle":
+				animation_player.play("idle")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	if !is_locked:
