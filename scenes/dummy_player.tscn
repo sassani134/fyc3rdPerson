@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://sehmp6j44r6u"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_rkebp"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xcu7y"]
+
+[sub_resource type="Animation" id="Animation_vjf2a"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_ld1ej"]
+resource_name = "iddle"
+length = 1.2
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bo6l2"]
+_data = {
+"RESET": SubResource("Animation_vjf2a"),
+"iddle": SubResource("Animation_ld1ej")
+}
+
+[node name="dummy_player" type="CharacterBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_rkebp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_xcu7y")
+
+[node name="Gimball" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Gimball"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.02447, 5.15555)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../MeshInstance3D")
+libraries = {
+"": SubResource("AnimationLibrary_bo6l2")
+}
