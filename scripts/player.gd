@@ -22,22 +22,13 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @export var sens_horizontal = 0.5
 @export var sens_vertical = 0.5
 
-func camo():
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir = Input.get_vector("cam_left", "cam_right", "cam_up", "cam_down")
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		camera_mount.x = direction.x * SPEED
-		camera_mount.z = direction.z * SPEED
-	else:
-		camera_mount.x = move_toward(velocity.x, 0, SPEED)
-		camera_mount.z = move_toward(velocity.z, 0, SPEED)
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED # mouse movment
 
 func _input(event):
+	#print(event.as_text())
+	
 	if event is InputEventMouseMotion:
 		rotate_y(deg_to_rad(-event.relative.x * sens_horizontal ))
 		visuals.rotate_y(deg_to_rad(event.relative.x * sens_horizontal ))
@@ -47,10 +38,14 @@ func camo2():
 	var input_dir = Input.get_vector("cam_left", "cam_right", "cam_up", "cam_down")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		camera_mount.rotate_y(deg_to_rad(direction.y))
-		visuals.rotate_y(deg_to_rad(direction.y))
-		camera_mount.rotate_x(deg_to_rad(direction.x))
+		rotate_y(deg_to_rad(-direction.y * sens_horizontal ))
+		visuals.rotate_y(deg_to_rad(direction.y  * sens_horizontal))
+		camera_mount.rotate_x(deg_to_rad(direction.x * sens_horizontal))
+#		rotate_x(deg_to_rad(-direction.x*10 * sens_horizontal ))
+#		camera_mount.rotate_y(deg_to_rad(direction.y * sens_vertical))
+#		camera_mount.rotate_z(deg_to_rad(direction.z))
 
+		
 func _physics_process(delta):
 	camo2()
 	if !animation_player.is_playing():
@@ -67,7 +62,6 @@ func _physics_process(delta):
 	else :
 		SPEED = walking_speed
 		running = false
-		
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
