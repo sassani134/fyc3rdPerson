@@ -1,11 +1,12 @@
 extends CharacterBody3D
 
-@onready var camera_mount = $camera_mount
+@onready var camera_mount = $mount_camera
 @onready var animation_player = $visuals/mixamo_base/AnimationPlayer
 @onready var visuals = $visuals
 
 var rotation_speed = PI/2
-
+var invert_y = false
+var invert_x = false
 var SPEED = 3.0
 const JUMP_VELOCITY = 4.5
 
@@ -27,7 +28,6 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED # mouse movment
 
 func _input(event):
-	#print(event.as_text())
 	
 	if event is InputEventMouseMotion:
 		rotate_y(deg_to_rad(-event.relative.x * sens_horizontal ))
@@ -45,9 +45,21 @@ func camo2():
 #		camera_mount.rotate_y(deg_to_rad(direction.y * sens_vertical))
 #		camera_mount.rotate_z(deg_to_rad(direction.z))
 
+#relire camera gimball corriger le probleme de cam_down
+func camo3(delta):
+	# Rotate outer gimbal around y axis
+	var y_rotation = Input.get_axis("cam_left", "cam_right")
+	rotate_object_local(Vector3.UP, y_rotation * rotation_speed * delta)
+	# Rotate inner gimbal around local x axis
+	var x_rotation = Input.get_axis("cam_up", "cam_down")
+	x_rotation = -x_rotation if invert_y else x_rotation
+	$mount_camera/inner_mount.rotate_object_local(Vector3.RIGHT, x_rotation * rotation_speed * delta)
+
+
+
 		
 func _physics_process(delta):
-	camo2()
+	camo3(delta)
 	if !animation_player.is_playing():
 		is_locked=false
 	
@@ -94,6 +106,8 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	if !is_locked:
 		move_and_slide()
-		
 
-#end 
+# Le kick pose probleme en l'aire 
+# Ajouter d'autre animation
+# Faire un niveau avec un Goal
+# donc ajouter des modele 3D
