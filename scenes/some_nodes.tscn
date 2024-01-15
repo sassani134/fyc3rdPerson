@@ -1,0 +1,217 @@
+[gd_scene load_steps=54 format=3 uid="uid://c2sevde2se7ku"]
+
+[ext_resource type="PackedScene" uid="uid://noy0ksirawq7" path="res://kenneyModelGLTF/block.glb" id="1_8t5jh"]
+[ext_resource type="PackedScene" uid="uid://cv0m2xs0mqhl2" path="res://kenneyModelGLTF/blockCliff.glb" id="2_v8pbl"]
+[ext_resource type="PackedScene" uid="uid://kdb61io21k3g" path="res://kenneyModelGLTF/blockCliffCorner.glb" id="3_awds2"]
+[ext_resource type="PackedScene" uid="uid://ud70vxw827he" path="res://kenneyModelGLTF/blockCornerSmall.glb" id="4_0qscx"]
+[ext_resource type="PackedScene" uid="uid://6bdbr7mydoo" path="res://kenneyModelGLTF/blockCornerLarge.glb" id="5_kj6n4"]
+[ext_resource type="PackedScene" uid="uid://ctq0nbop0wrar" path="res://kenneyModelGLTF/blockCurve.glb" id="6_bs5kc"]
+[ext_resource type="PackedScene" uid="uid://bp8ivtmih0hy3" path="res://kenneyModelGLTF/blockCurveHalf.glb" id="7_4onwd"]
+[ext_resource type="PackedScene" uid="uid://bbj0dkw7ne4fv" path="res://kenneyModelGLTF/blockCurveLow.glb" id="8_6w3q6"]
+[ext_resource type="PackedScene" uid="uid://crf7rwxan11cj" path="res://kenneyModelGLTF/blockDirt.glb" id="9_4m214"]
+[ext_resource type="PackedScene" uid="uid://dnb47iu0j7vet" path="res://kenneyModelGLTF/blockDirtHalf.glb" id="10_mvcfr"]
+[ext_resource type="PackedScene" uid="uid://duubr32gkusqn" path="res://kenneyModelGLTF/blockDirtRamp.glb" id="11_ut1cn"]
+[ext_resource type="PackedScene" uid="uid://blywkpgp0yd45" path="res://kenneyModelGLTF/blockDirtRampHalf.glb" id="12_edojj"]
+[ext_resource type="PackedScene" uid="uid://x8ocsiiegcqr" path="res://kenneyModelGLTF/blockEnd.glb" id="13_cgyjb"]
+[ext_resource type="PackedScene" uid="uid://6lutt11eqasw" path="res://kenneyModelGLTF/blockHalf.glb" id="14_06k00"]
+[ext_resource type="PackedScene" uid="uid://74wm8cid30ws" path="res://kenneyModelGLTF/blockHexagon.glb" id="15_yi6pj"]
+[ext_resource type="PackedScene" uid="uid://b4mx0h76fmpcl" path="res://kenneyModelGLTF/blockHexagonLow.glb" id="16_ta2hb"]
+[ext_resource type="PackedScene" uid="uid://ik8oxkabwcxl" path="res://kenneyModelGLTF/blockLarge.glb" id="17_3ntqh"]
+[ext_resource type="PackedScene" uid="uid://c7qcl3v1wve20" path="res://kenneyModelGLTF/blockLevel.glb" id="18_psgek"]
+[ext_resource type="PackedScene" uid="uid://cc4bf7n0ch5vd" path="res://kenneyModelGLTF/blockLong.glb" id="19_lybda"]
+[ext_resource type="PackedScene" uid="uid://o1rpe5x7xlbr" path="res://kenneyModelGLTF/blockMoving.glb" id="20_wukx7"]
+[ext_resource type="PackedScene" uid="uid://c8mliv1yt12vs" path="res://kenneyModelGLTF/blockMovingLarge.glb" id="21_3o4h5"]
+[ext_resource type="PackedScene" uid="uid://c22s36chawdas" path="res://kenneyModelGLTF/blockMovingBlue.glb" id="22_2qv7o"]
+[ext_resource type="PackedScene" uid="uid://cgk73pxyx5tdg" path="res://kenneyModelGLTF/blockQuarter.glb" id="23_oyf1l"]
+[ext_resource type="PackedScene" uid="uid://by1wl3ccvt023" path="res://kenneyModelGLTF/blockRounded.glb" id="24_5p6ea"]
+[ext_resource type="PackedScene" uid="uid://brvkstnt6yhby" path="res://kenneyModelGLTF/blockRoundedLarge.glb" id="25_1m1cj"]
+[ext_resource type="PackedScene" uid="uid://casnuvetfty6b" path="res://kenneyModelGLTF/blockRoundedLong.glb" id="26_4wlxt"]
+[ext_resource type="PackedScene" uid="uid://cw4v1h6ldosav" path="res://kenneyModelGLTF/blockRoundedLow.glb" id="27_ctfxo"]
+[ext_resource type="PackedScene" uid="uid://c67njnsyb6r6b" path="res://kenneyModelGLTF/blockRoundedLowLong.glb" id="28_ypnph"]
+[ext_resource type="PackedScene" uid="uid://jmddqqh8md1o" path="res://kenneyModelGLTF/blockSlope.glb" id="29_ell1y"]
+[ext_resource type="PackedScene" uid="uid://dq3xhxkx6y6eu" path="res://kenneyModelGLTF/blockSlopeHalf.glb" id="30_w28kq"]
+[ext_resource type="PackedScene" uid="uid://dcnm0w8l0tq7o" path="res://kenneyModelGLTF/blockSnow.glb" id="31_jv61l"]
+[ext_resource type="PackedScene" uid="uid://cyduyep4thjtg" path="res://kenneyModelGLTF/blockSnowCliff.glb" id="32_5e00m"]
+[ext_resource type="PackedScene" uid="uid://fiwktly2fwif" path="res://kenneyModelGLTF/blockSnowCliffCorner.glb" id="33_5a254"]
+[ext_resource type="PackedScene" uid="uid://b60utg04gepvo" path="res://kenneyModelGLTF/blockSnowCornerLarge.glb" id="34_w2mvs"]
+[ext_resource type="PackedScene" uid="uid://nhajnpqaop5o" path="res://kenneyModelGLTF/blockSnowCornerSmall.glb" id="35_rtj7h"]
+[ext_resource type="PackedScene" uid="uid://bw1ku4l1wk2kr" path="res://kenneyModelGLTF/blockSnowCurve.glb" id="36_7r0hp"]
+[ext_resource type="PackedScene" uid="uid://dmhasx5ejfhtf" path="res://kenneyModelGLTF/blockSnowCurveHalf.glb" id="37_2kf33"]
+[ext_resource type="PackedScene" uid="uid://h3hq70xi5k07" path="res://kenneyModelGLTF/blockSnowCurveLow.glb" id="38_inc2b"]
+[ext_resource type="PackedScene" uid="uid://cnpb2ggfe05e2" path="res://kenneyModelGLTF/blockSnowEnd.glb" id="39_1svn5"]
+[ext_resource type="PackedScene" uid="uid://6erfufyqku7l" path="res://kenneyModelGLTF/blockSnowHalf.glb" id="40_tmfp4"]
+[ext_resource type="PackedScene" uid="uid://cmnlmj4f1oggn" path="res://kenneyModelGLTF/blockSnowHexagon.glb" id="41_qo602"]
+[ext_resource type="PackedScene" uid="uid://dp6galy5asnvq" path="res://kenneyModelGLTF/blockSnowHexagonLow.glb" id="42_iivtw"]
+[ext_resource type="PackedScene" uid="uid://ycoyvff2rguj" path="res://kenneyModelGLTF/blockSnowLarge.glb" id="43_x1643"]
+[ext_resource type="PackedScene" uid="uid://ddb1rdxlya0id" path="res://kenneyModelGLTF/blockSnowLevel.glb" id="44_qcc7g"]
+[ext_resource type="PackedScene" uid="uid://buxwdrl0jbr2l" path="res://kenneyModelGLTF/blockSnowLong.glb" id="45_ya6ka"]
+[ext_resource type="PackedScene" uid="uid://b5d8a814qc1fa" path="res://kenneyModelGLTF/blockSnowQuarter.glb" id="46_loqxa"]
+[ext_resource type="PackedScene" uid="uid://bhaxg75jvhtrm" path="res://kenneyModelGLTF/blockSnowRounded.glb" id="47_uojja"]
+[ext_resource type="PackedScene" uid="uid://bvc7ygu1up1ep" path="res://kenneyModelGLTF/blockSnowRoundedLarge.glb" id="48_mgt4q"]
+[ext_resource type="PackedScene" uid="uid://csxubwfx7hfxo" path="res://kenneyModelGLTF/blockSnowRoundedLong.glb" id="49_c6n86"]
+[ext_resource type="PackedScene" uid="uid://dba0xwq4urosi" path="res://kenneyModelGLTF/blockSnowRoundedLow.glb" id="50_15glf"]
+[ext_resource type="PackedScene" uid="uid://b5yg3cp4mms02" path="res://kenneyModelGLTF/blockSnowRoundedLowLong.glb" id="51_0s75m"]
+[ext_resource type="PackedScene" uid="uid://s2o6i8jm07ad" path="res://kenneyModelGLTF/blockSnowSlope.glb" id="52_0kfw8"]
+[ext_resource type="PackedScene" uid="uid://week01yd04xa" path="res://kenneyModelGLTF/blockSnowSlopeHalf.glb" id="53_12t02"]
+
+[node name="someNodes" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, -3)
+
+[node name="block" parent="." instance=ExtResource("1_8t5jh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.379812, 0, 1.21037)
+
+[node name="blockCliff" parent="." instance=ExtResource("2_v8pbl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.285788, 1.19209e-07, 2.135)
+
+[node name="blockCliffCorner" parent="." instance=ExtResource("3_awds2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.95738, 0, 1.66177)
+
+[node name="blockCornerSmall" parent="." instance=ExtResource("4_0qscx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.56333, 0, 1.75225)
+
+[node name="blockCornerLarge" parent="." instance=ExtResource("5_kj6n4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.31621, 0, -0.166915)
+
+[node name="blockCurve" parent="." instance=ExtResource("6_bs5kc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1688, 0, 1.94918)
+
+[node name="blockCurveHalf" parent="." instance=ExtResource("7_4onwd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.573894, 0, 1.54968)
+
+[node name="blockCurveLow" parent="." instance=ExtResource("8_6w3q6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.484585, 0, 1.93857)
+
+[node name="blockDirt" parent="." instance=ExtResource("9_4m214")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.225199, 0, 2.12943)
+
+[node name="blockDirtHalf" parent="." instance=ExtResource("10_mvcfr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0547349, 0, 2.61383)
+
+[node name="blockDirtRamp" parent="." instance=ExtResource("11_ut1cn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.443559, 0, 2.58233)
+
+[node name="blockDirtRampHalf" parent="." instance=ExtResource("12_edojj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0365794, 1.19209e-07, 2.53105)
+
+[node name="blockEnd" parent="." instance=ExtResource("13_cgyjb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02782, 0, -1.05679)
+
+[node name="blockHalf" parent="." instance=ExtResource("14_06k00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.690276, 0, 2.28186)
+
+[node name="blockHexagon" parent="." instance=ExtResource("15_yi6pj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.554278, 0, 1.72067)
+
+[node name="blockHexagonLow" parent="." instance=ExtResource("16_ta2hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.524137, 0, 1.69416)
+
+[node name="blockLarge" parent="." instance=ExtResource("17_3ntqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.905282, 1.19209e-07, 1.7751)
+
+[node name="blockLevel" parent="." instance=ExtResource("18_psgek")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.220881, -1.19209e-07, 2.21935)
+
+[node name="blockLong" parent="." instance=ExtResource("19_lybda")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.301584, 1.19209e-07, 1.61834)
+
+[node name="blockMoving" parent="." instance=ExtResource("20_wukx7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.434565, 0, 2.1192)
+
+[node name="blockMovingLarge" parent="." instance=ExtResource("21_3o4h5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0680155, 0, 2.04356)
+
+[node name="blockMovingBlue" parent="." instance=ExtResource("22_2qv7o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.600356, 0, 0.712332)
+
+[node name="blockQuarter" parent="." instance=ExtResource("23_oyf1l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.126725, 0, 1.92775)
+
+[node name="blockRounded" parent="." instance=ExtResource("24_5p6ea")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.394166, 1.19209e-07, 2.47776)
+
+[node name="blockRoundedLarge" parent="." instance=ExtResource("25_1m1cj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.389233, 0, 2.74478)
+
+[node name="blockRoundedLong" parent="." instance=ExtResource("26_4wlxt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0843228, 0, 2.28707)
+
+[node name="blockRoundedLow" parent="." instance=ExtResource("27_ctfxo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.44116, 1.19209e-07, -0.0395226)
+
+[node name="blockRoundedLowLong" parent="." instance=ExtResource("28_ypnph")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.38764, 0, -1.15597)
+
+[node name="blockSlope" parent="." instance=ExtResource("29_ell1y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.18661, 0, 0.955024)
+
+[node name="blockSlopeHalf" parent="." instance=ExtResource("30_w28kq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.503298, 0, -0.92128)
+
+[node name="blockSnow" parent="." instance=ExtResource("31_jv61l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.82503, 1.19209e-07, -1.03466)
+
+[node name="blockSnowCliff" parent="." instance=ExtResource("32_5e00m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.489072, 0, -0.0755177)
+
+[node name="blockSnowCliffCorner" parent="." instance=ExtResource("33_5a254")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18622, 0, -0.509673)
+
+[node name="blockSnowCornerLarge" parent="." instance=ExtResource("34_w2mvs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.809505, -1.19209e-07, -0.305826)
+
+[node name="blockSnowCornerSmall" parent="." instance=ExtResource("35_rtj7h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.319857, 0, 2.04729)
+
+[node name="blockSnowCurve" parent="." instance=ExtResource("36_7r0hp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.779655, 0, 1.92435)
+
+[node name="blockSnowCurveHalf" parent="." instance=ExtResource("37_2kf33")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.436415, 1.19209e-07, -2.05811)
+
+[node name="blockSnowCurveLow" parent="." instance=ExtResource("38_inc2b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.44739, 0, -1.02693)
+
+[node name="blockSnowEnd" parent="." instance=ExtResource("39_1svn5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.47583, 0, 0.118644)
+
+[node name="blockSnowHalf" parent="." instance=ExtResource("40_tmfp4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76893, 0, -3.89009)
+
+[node name="blockSnowHexagon" parent="." instance=ExtResource("41_qo602")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.74104, 0, -0.0204759)
+
+[node name="blockSnowHexagonLow" parent="." instance=ExtResource("42_iivtw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.03751, 0, -3.39708)
+
+[node name="blockSnowLarge" parent="." instance=ExtResource("43_x1643")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.28579, 0, 0.0840378)
+
+[node name="blockSnowLevel" parent="." instance=ExtResource("44_qcc7g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.69674, 0, -0.454078)
+
+[node name="blockSnowLong" parent="." instance=ExtResource("45_ya6ka")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00625539, 1.19209e-07, -1.37655)
+
+[node name="blockSnowQuarter" parent="." instance=ExtResource("46_loqxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8402, 0, -0.331669)
+
+[node name="blockSnowRounded" parent="." instance=ExtResource("47_uojja")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.97112, 1.19209e-07, 0.875071)
+
+[node name="blockSnowRoundedLarge" parent="." instance=ExtResource("48_mgt4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.67442, 0, 1.8207)
+
+[node name="blockSnowRoundedLong" parent="." instance=ExtResource("49_c6n86")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.177882, 0, 0.105012)
+
+[node name="blockSnowRoundedLow" parent="." instance=ExtResource("50_15glf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.249609, 0, 0.808008)
+
+[node name="blockSnowRoundedLowLong" parent="." instance=ExtResource("51_0s75m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.946703, 0, 0.888619)
+
+[node name="blockSnowSlope" parent="." instance=ExtResource("52_0kfw8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.523096, 0, 1.64164)
+
+[node name="blockSnowSlopeHalf" parent="." instance=ExtResource("53_12t02")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.709949, 0, 0.556524)
