@@ -1,11 +1,12 @@
 extends CharacterBody3D
 
-@onready var camera_mount : Node3D = $camera_mount
-@onready var animation_player  = $visuals/mixamo_base/AnimationPlayer
-@onready var visuals  = $visuals
+@onready var camera_mount = $mount_camera
+@onready var animation_player = $visuals/mixamo_base/AnimationPlayer
+@onready var visuals = $visuals
 
 var rotation_speed = PI/2
-
+var invert_y = false
+var invert_x = false
 var SPEED = 3.0
 const JUMP_VELOCITY = 4.5
 
@@ -22,22 +23,12 @@ var gravity  = ProjectSettings.get_setting("physics/3d/default_gravity")
 @export var sens_horizontal  = 0.5
 @export var sens_vertical  = 0.5
 
-func camo():
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir = Input.get_vector("cam_left", "cam_right", "cam_up", "cam_down")
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		camera_mount.x = direction.x * SPEED
-		camera_mount.z = direction.z * SPEED
-	else:
-		camera_mount.x = move_toward(velocity.x, 0, SPEED)
-		camera_mount.z = move_toward(velocity.z, 0, SPEED)
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED # mouse movment
 
 func _input(event):
+
 	if event is InputEventMouseMotion:
 		rotate_y(deg_to_rad(-event.relative.x * sens_horizontal ))
 		visuals.rotate_y(deg_to_rad(event.relative.x * sens_horizontal ))
@@ -47,12 +38,28 @@ func camo2():
 	var input_dir = Input.get_vector("cam_left", "cam_right", "cam_up", "cam_down")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		camera_mount.rotate_y(deg_to_rad(direction.y))
-		visuals.rotate_y(deg_to_rad(direction.y))
-		camera_mount.rotate_x(deg_to_rad(direction.x))
+		rotate_y(deg_to_rad(-direction.y * sens_horizontal ))
+		visuals.rotate_y(deg_to_rad(direction.y  * sens_horizontal))
+		camera_mount.rotate_x(deg_to_rad(direction.x * sens_horizontal))
+#		rotate_x(deg_to_rad(-direction.x*10 * sens_horizontal ))
+#		camera_mount.rotate_y(deg_to_rad(direction.y * sens_vertical))
+#		camera_mount.rotate_z(deg_to_rad(direction.z))
+
+#relire camera gimball corriger le probleme de cam_down
+func camo3(delta):
+	# Rotate outer gimbal around y axis
+	var y_rotation = Input.get_axis("cam_left", "cam_right")
+	rotate_object_local(Vector3.UP, y_rotation * rotation_speed * delta)
+	# Rotate inner gimbal around local x axis
+	var x_rotation = Input.get_axis("cam_up", "cam_down")
+	x_rotation = -x_rotation if invert_y else x_rotation
+	$mount_camera/inner_mount.rotate_object_local(Vector3.RIGHT, x_rotation * rotation_speed * delta)
+
+
+
 
 func _physics_process(delta):
-	camo2()
+	camo3(delta)
 	if !animation_player.is_playing():
 		is_locked=false
 
@@ -67,7 +74,6 @@ func _physics_process(delta):
 	else :
 		SPEED = walking_speed
 		running = false
-
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -101,5 +107,7 @@ func _physics_process(delta):
 	if !is_locked:
 		move_and_slide()
 
-
-#end
+# Le kick pose probleme en l'aire
+# Ajouter d'autre animation
+# Faire un niveau avec un Goal
+# donc ajouter des modele 3D
